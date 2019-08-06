@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="namea"></div>
+
+    <div class="name"></div>
+
+    <div class="out">
+        <div class="in">
+
+        </div>
+    </div>
+
+    <div class="one n">one</div>
+    <br />
+    <div class="two n">two</div>
+    <br />
+    <div class="three n">three</div>
+    <style>
+        .namea {
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            border: 20px solid red;
+            margin: 30px;
+            background: black;
+            box-sizing: border-box;
+        }
+        .name {
+            background: red;
+        }
+        .out {
+            height: 300px;
+            width: 300px;
+            background: yellow;
+            position: relative;
+        }
+        .in {
+            height: 100px;
+            width: 100px;
+            background: green;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .n {
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+            border: 8px solid green;
+            background: yellow;
+        }
+        .two {
+            position: relative;
+            top: 50px;
+        }
+        .one {
+            position: fixed;
+        }
+        .three {
+
+        }
+    </style>
+</body>
+</html>
+
+/*
+box sizing:
+*/
+
+/*what is box model
+    /*The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:
+    /*contetn, padding, border, margin
+
+
+/*what is specifity 
+    /*browser decides which style to apply in css
+    /*if you have two styles it will choose the last style for example 
+    /*if the style is in line 13 it will choose the style in the line 14
+    /*div.nam { background: yellow } will pick the more specific which is div.name it doesn't matted which one is on top
+    /*id will always win the battle
+
+/* how to align a block element inside another elemnent ?
+    /* see in and out 
+
+/* difference betwen static, relative, absolute, fixed
+
+    /*one  position: fixed; relative to the window
+    /*two relative will move left: 50px relative to parent, without affecting 1 and 3
+        /*position absolute will move inside the parent
+    /* three position: static l stick to the normal page flow. So if there is a left/right/top/bottom/z-index set then there will be no effect on that element.
