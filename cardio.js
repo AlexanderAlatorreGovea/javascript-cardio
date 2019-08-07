@@ -1,3 +1,5 @@
+//wes bos video 7
+
 const people = [
     { name: 'Wes', year: 1988 },
     { name: 'Kait', year: 1986 },
