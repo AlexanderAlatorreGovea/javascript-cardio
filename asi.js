@@ -26,7 +26,7 @@ let obj = { a:123 };
 
 let a;
 
-a ={a:123}[a /*or undefined */].forEach(function(x){})
+a = {a:123}[a /*or undefined */].forEach(function(x){})
 
 //with the quotattion marks this is a variable
 
