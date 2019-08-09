@@ -99,7 +99,103 @@
         console.log(obj); /// this will yield 11 because we made obj an object
    
         ///primitives are copied by their value and objects are copied by their reference
+
+        function Circle(radius) {
+            this.radius = radius;
+            this.draw = function() {
+                console.log('draw');
+            }
+        }
+
+        const circle = new Circle(10);
+
+        //properties can be accessed as below
+        circle.location = { x: 1 };
+        circle['location'] = { x: 1 }; //
+
+        for (let key in circle) {
+            if (typeof circle[key] !== 'function')
+            console.log(key, circle[key])
+        }
+
+        Object.key(circle);
+
+        console.log(keys);
+
+        if ('radius' in circle)
+            console.log('circle has a radius')
+
+
+        ///abstraction, hide the details and complexity and only show the essentials
+
+        //closure === variables accessible to the inner function so the child funciton will have access to the parent function variables
+        function Circle(radius) {
+            let color = 'red'; //this is a local object so it cannot be access anywhere else aside from this function
+
+            this.radius = radius;
+
+            this.defaultLocation =  {x: 0, y: 0 };
+
+            let computeOptimumLocation = function() {
+
+            }
+
+            this.draw = function() {
+
+                computeOptimumLocation();
+
+                this.radius
+                console.log('draw');
+            }
+        }
+
+        const circle = new Circle(10)
+
+
+        ////
+
+        function Circle(radius) {
+            let color = 'red'; //this is a local object so it cannot be access anywhere else aside from this function
+
+            this.radius = radius; 
+
+            let defaultLocation =  {x: 0, y: 0 };
+
+            this.getDefaultLocation = function() {
+                return defaultLocation; // this will give you access to the defaultLocation variable outside
+            };
+
+            Object.defineProperty(this, 'defaultLocation', {
+                get: function() {
+                    return defaultLocation
+                },
+                set: function() {
+                    if (!value.x || !value.y )
+                        throw new Error('Invalid location')
+                    defaultLocation = value;
+                }
+            })
+
+            let computeOptimumLocation = function() {
+
+            }
+
+
+            this.draw = function() {
+
+                computeOptimumLocation();
+
+                this.radius
+                console.log('draw');
+            }
+        }
+
+        const circle = new Circle(10);
+
+        circle.defaultLocation; /// this will return {x: 0, y: 0 }
         
+        circle.getDefaultLocation(); /// this will return {x: 0, y: 0 }
+
    </script>
     
 </body>
