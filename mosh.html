@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        const circle = {
+            radius: 1, //variables are properties
+            location: {
+                x: 1,
+                y: 1
+            },
+            draw: function() { ///method because this is a function
+                console.log('draw')
+            }
+        };
+
+        circle.draw();*/
+
+
+        ///2. Factory function
+        /*
+        function createCircle(radius) {
+            return {
+            radius, 
+            draw: function() {
+                console.log('draw')
+            }
+            }
+        }
+
+        const circle = createCircle(1);
+        circle.draw();*/
+
+        ///3. constructor function
+
+        function Circle(radius) {
+            this.radius = raduis;
+            this.draw = function() {
+                console.log('draw')
+            }
+        } 
+
+        const another = new Circle(1);//new operator creates a new object, makes the key this to point to the parent object
+    
+        //these two are equivalent
+            let x = {};
+            let x = new Object();
+
+        //.call  calls a function
+        Circle.call({}, 1) ///this is like declaring the new operator
+
+        //.apply calls a function
+        Circle.apply({}, [1,2,3]) ///with apply you can pass in an array
+
+        let x = 10; //x === 20
+        let y = x; //y === 10
+
+        x = 20;
+
+        ///this will yiedl x = 20 and y = 20
+
+        let x = { value: 10 };
+
+        let y = x;
+
+        x.value = 20;
+
+        ///when we use an object it the varialbe is stored somewhere else in memory
+
+        // x === 20
+        // y === 10
+
+        ///function
+
+        let number = 10;
+
+        function increase(number) {
+            number ++;
+        }
+
+        increase(number);
+        console.log(number) // this will yield 10 because it will give use the number stored in memory whereas the number++ will point to other memory place since it is an object
+    
+        //
+        let obj = { value: 10};
+
+        function increase(obj) {
+            obj ++;
+        }
+
+        increase(obj);
+        console.log(obj); /// this will yield 11 because we made obj an object
+   
+        ///primitives are copied by their value and objects are copied by their reference
+        
+   </script>
+    
+</body>
+</html>
