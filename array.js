@@ -1,6 +1,6 @@
 let a1
 
-console.log('1', a1)
+//console.log('1', a1)
 
 let a2
 
