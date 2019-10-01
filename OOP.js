@@ -32,4 +32,4 @@
         ///allows you to get rid if and else or switch and case
         
 //variables are properties
-// functions are methods
+/// functions are methods
